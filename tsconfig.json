@@ -1,0 +1,18 @@
+{
+  "extends": "./node_modules/@tsconfig/node12/tsconfig.json",
+
+  "compilerOptions": {
+		"preserveConstEnums": true,
+		"module": "ES6",
+		"target": "ES5",
+		"moduleResolution": "node",
+		"allowJs": true,
+		"lib": ["ES2016","DOM"],
+		"outDir": "./dist",
+		"sourceMap": true,
+		"downlevelIteration": true
+	},	
+
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
