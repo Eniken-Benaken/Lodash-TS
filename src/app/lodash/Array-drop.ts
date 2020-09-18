@@ -1,5 +1,6 @@
-export const drop = (array:Array<any>, howManyToDrop: number) => {
-	let slice: Array<any> = [];
-	for (let i=howManyToDrop; i<array.length; i++) slice.push(array[i]);
-	console.log(slice);
+const drop = (array:Array<any>, howManyToDrop: number) => {
+	//func return array with dropped howManyToDrop items
+	return array.slice(howManyToDrop,array.length);
 }
+
+export default drop;

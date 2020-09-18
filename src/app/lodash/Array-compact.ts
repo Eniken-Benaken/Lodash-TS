@@ -1,7 +1,12 @@
-export const compact = (arrayToComPact: Array<any>) => {
+const compact = (arrayToComPact: Array<any>) => {
+	/** 
+	 * this func filterts array from falsy values
+	 */
 	const removeFalsyValues = (value:any):boolean => {
 		if(!value) return false;
 		else return true;
 	}	
-	console.log(arrayToComPact.filter(value => removeFalsyValues(value)));
+	return arrayToComPact.filter(value => removeFalsyValues(value));
 }
+
+export default compact;
