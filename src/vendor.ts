@@ -24,6 +24,7 @@ import isObject from "./app/lodash/isObject";
 import toStr from "./app/lodash/toStr";
 // import join from './app/lodash/Array-join';
 import lastIndexOf from './app/lodash/Array-lastIndexOf';
+import pull from "./app/lodash/Array-pull";
 const _ = require('lodash');
 
 let array = [1.1,null,2,false,[3,[4,5,6,[7,8,[9]]]],undefined,4.5,'',5,NaN,6.2,7];
@@ -55,4 +56,5 @@ let secondaryButton = document.getElementById("executeLodashFunc");
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(arrayToString(array2)));
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => {for(let i of array.keys()) console.log(toStr(array2[i as any]))});
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(join(array2,"-string-")));
-if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(lastIndexOf("array3",["second",23],0),array3.length-1));
+// if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(lastIndexOf(array3,["second",23],0)));
+if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(pull(array3,["second",23],0,3,4)));
