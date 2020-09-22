@@ -1,6 +1,6 @@
 import Equals from './Equals';
 
-const pull = (array: Array<any>,...values:Array<any>): Array<any> => {
+const pullAll = (array: Array<any>,values:Array<any>): Array<any> => {
 	for (let value of values) {
 		array = array.filter(entry => {
 			if(Equals(value,entry)) return false;
@@ -10,4 +10,4 @@ const pull = (array: Array<any>,...values:Array<any>): Array<any> => {
 	return array;
 }
 
-export default pull;
+export default pullAll;
