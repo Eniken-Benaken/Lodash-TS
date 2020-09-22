@@ -19,4 +19,5 @@ const fromPairs = (array: Array<any>) => {
 	console.log(obj);
 	return obj;
 };
+
 export default fromPairs;

@@ -9,4 +9,5 @@ const flattenDepth = (array: Array<any>, depth: number): Array<any> => {
 	}
 	return arrayToFlatten;
 }
+
 export default flattenDepth;

@@ -1,8 +1,5 @@
-/**
- * Attempt to create SameValueZero indexOf using [ES6]Sets
- */
 import Equals from './Equals';
-const indexOf = (array: Array<any>,value: any, startIndex?: number) => {
+const lastIndexOf = (array: Array<any>,value: any, startIndex?: number) => {
 	/**
 	 * if array is empty return -1
 	 */
@@ -11,15 +8,16 @@ const indexOf = (array: Array<any>,value: any, startIndex?: number) => {
 
 	/**
 	 * if startIndex isn't specified set index to 0
+	 * if negative startIndex goes out of array returns -1 
 	 */
-	let index: number | undefined = startIndex == null ? 0 : startIndex;
-
+	let index: number | undefined = startIndex == null ? array.length-1 : startIndex;
+	if(array.length-1+index<0) return -1;
 	/**
 	 * if index is Positive 
 	 * start checking every item of array for equality with value
 	 */
 	if(index >= 0) {
-	for (index; index<array.length;index++) {
+	for (index; index>=0;index--) {
 		if (Equals(array[index],value)) return index;
 	}
 	return -1;
@@ -30,11 +28,11 @@ const indexOf = (array: Array<any>,value: any, startIndex?: number) => {
 	 */
 	else {		
 		index = array.length-1+index;
-		for (index; index<array.length; index++) {
+		for (index; index>=0; index--) {
 			if (Equals(array[index],value)) return index;
 		}
 		return -1;
 	}
 };
 
-export default indexOf;
+export default lastIndexOf;
