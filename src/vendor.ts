@@ -22,6 +22,7 @@ import isObject from "./app/lodash/isObject";
 // import intersectionMultyBy from './app/lodash/Array-intersectionMultyBy';
 // import arrayToString from "./app/lodash/arrayToString";
 import toStr from "./app/lodash/toStr";
+import join from './app/lodash/Array-join';
 const _ = require('lodash');
 
 let array = [1.1,null,2,false,[3,[4,5,6,[7,8,[9]]]],undefined,4.5,'',5,NaN,6.2,7];
@@ -51,4 +52,5 @@ let secondaryButton = document.getElementById("executeLodashFunc");
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(intersectionMulty([array2,array,array3])));
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(intersectionMultyBy([array2,array,array3],toString)));
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(arrayToString(array2)));
-if(secondaryButton !== null) secondaryButton.addEventListener("click", () => {for(let i of array.keys()) console.log(toStr(array2[i as any]))});
+// if(secondaryButton !== null) secondaryButton.addEventListener("click", () => {for(let i of array.keys()) console.log(toStr(array2[i as any]))});
+if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(join(array2,"-string-")));
