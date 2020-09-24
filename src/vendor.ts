@@ -38,9 +38,9 @@ import remove from "./app/lodash/Array-remove";
 import union from "./app/lodash/Array-union";
 const _ = require('lodash');
 
-let array = [1.1,null,2,false,[3,[4,5,6,[7,8,[9]]]],undefined,4.5,'',5,NaN,6.2,7];
+let array = [1.1,null,2,false,[3,[4,5,6,[7,8,[9]]]],undefined,4.5,'',5,NaN,Infinity,6.2,7];
 let array2 = [['str', "value"],["second",23],{obj:"obj","rat":[{rat:1, cat: [{cat: "cat"}]}]},3,undefined,4,'str',5,NaN,6.5,7,["name",33]];
-let array3 = [["second",23],["second",23],{obj:"obj","rat":[{rat:1, cat: [{cat: "cat1"}]}]},3,undefined,4,'str',5,NaN,6.5,7,["name",33]];
+let array3 = [["second",23],["second",23],"unic string",{obj:"obj","rat":[{rat:1, cat: [{cat: "cat1"}]}]},3,undefined,4,'str',5,NaN,6.5,7,["name",33]];
 let secondaryButton = document.getElementById("executeLodashFunc");
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(chunk(array,3)));
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(compact(array)));
@@ -78,4 +78,4 @@ let secondaryButton = document.getElementById("executeLodashFunc");
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(array3,takeRight(array3,3)));
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(array3,takeRightWhile(array3,(item: any) => {if(!isObject(item)) return true; else return false})));
 // if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(array3,takeWhile(array3,(item: any) => {if(!isObject(item)) return true; else return false})));
-if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(union([array,array2,array3])));
+if(secondaryButton !== null) secondaryButton.addEventListener("click", () => console.log(union([array2,array,array3])));

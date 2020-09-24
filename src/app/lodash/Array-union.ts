@@ -1,32 +1,22 @@
-import Equals from './Equals';
 import pull from './Array-pull';
+import lastIndexOf from './Array-lastIndexOf';
 
 const union = (arrays: Array<Array<any>>): Array<any> => {
-	let set = new Set(arrays[0]);
 	let contestants: Array<any> = [];
-	if(arrays.length === 1) return [...set];
-	for (let i = 1; i<arrays.length; i++) {
+	if(arrays.length === 1) return arrays[0];
+	for (let i = 0; i<arrays.length; i++) {
 		contestants = [...contestants,...arrays[i]];
 	}
-	for (let item of contestants) {
-		for(let entry of set) {
-			if(Equals(entry,item)) { 
-				set.delete(entry);
-				contestants = pull(contestants,item);
-				break;
-			}
+	let unic: Array<any> = [];
+	while(contestants.length>=1) {
+		if(lastIndexOf(contestants,contestants[0]) === 0) {
+			unic.push(contestants.shift());
+		}
+		else {
+			contestants = pull(contestants,contestants[0]);
 		}
 	}
-	for (let j = 0; j<contestants.length; j++){
-		if(contestants.length>1) {
-			for (let i = 1; i<contestants.length; i++) {
-				if(Equals(contestants[j],contestants[i])) {
-					contestants = pull(contestants, contestants[i]);
-				}
-			}
-		}
-	}
-	return [...set,...contestants];
+	return unic;
 };
 
 export default union;
